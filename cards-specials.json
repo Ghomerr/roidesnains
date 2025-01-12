@@ -1,0 +1,136 @@
+[{
+    "id": 40,
+    "value": 1,
+    "index": 1,
+    "name": "1",
+    "head": false,
+    "special": true,
+    "type": "dwarf",
+    "img": "carte_nain_1.png",
+    "effect": "apres_donne:changer_main_joueur"
+}, {
+    "id": 41,
+    "value": 11,
+    "index": 1,
+    "name": "11",
+    "head": false,
+    "special": true,
+    "type": "dwarf",
+    "img": "carte_nain_11_1.png",
+    "effect": "score_pli:3"
+}, {
+    "id": 42,
+    "value": 11,
+    "index": 2,
+    "name": "11",
+    "head": false,
+    "special": true,
+    "type": "dwarf",
+    "img": "carte_nain_11_2.png",
+    "effect": "next_score_sauf_dernier_pli:3"
+}, {
+    "id": 43,
+    "value": 1,
+    "index": 1,
+    "name": "1",
+    "head": false,
+    "special": true,
+    "type": "knight",
+    "img": "carte_chevalier_1.png",
+    "effect": "dernier_pli_score:3"
+}, {
+    "id": 44,
+    "value": 11,
+    "index": 1,
+    "name": "11",
+    "head": false,
+    "special": true,
+    "type": "knight",
+    "img": "carte_chevalier_11_1.png",
+    "effect": "score_donne:x2"
+}, {
+    "id": 45,
+    "value": 11,
+    "index": 2,
+    "name": "11",
+    "head": false,
+    "special": true,
+    "type": "knight",
+    "img": "carte_chevalier_11_2.png",
+    "effect": "echange_main_voisin"
+}, {
+    "id": 46,
+    "value": 1,
+    "index": 1,
+    "name": "1",
+    "head": false,
+    "special": true,
+    "type": "goblin",
+    "img": "carte_gobelin_1.png",
+    "effect": "score:1_tete"
+}, {
+    "id": 47,
+    "value": 11,
+    "index": 1,
+    "name": "11",
+    "head": false,
+    "special": true,
+    "type": "goblin",
+    "img": "carte_gobelin_11_1.png",
+    "effect": "score:-3"
+}, {
+    "id": 48,
+    "value": 11,
+    "index": 2,
+    "name": "11",
+    "head": false,
+    "special": true,
+    "type": "goblin",
+    "img": "carte_gobelin_11_2.png",
+    "effect": "apres_choix_quete:echange_2_cartes"
+}, {
+    "id": 49,
+    "value": 20,
+    "name": "atout",
+    "head": false,
+    "special": true,
+    "type": "special",
+    "img": "carte_speciale_atout.png"
+}, {
+    "id": 50,
+    "value": 0.5,
+    "name": "doppleganger",
+    "head": false,
+    "special": true,
+    "type": "special",
+    "img": "carte_speciale_doppleganger.png",
+    "effect": "copy",
+    "copyValue": 0.5
+}, {
+    "id": 51,
+    "value": 14.5,
+    "name": "dragon",
+    "head": false,
+    "special": true,
+    "type": "special",
+    "img": "carte_speciale_dragon.png"
+}, {
+    "id": 52,
+    "value": 0,
+    "name": "mummy",
+    "head": false,
+    "special": true,
+    "type": "special",
+    "img": "carte_speciale_momie.png",
+    "effect": "copy",
+    "copyValue": 0
+}, {
+    "id": 53,
+    "value": 0,
+    "name": "wizard",
+    "head": false,
+    "special": true,
+    "type": "special",
+    "img": "carte_speciale_sorcier.png",
+    "effect": "get-previous-fold-card"
+}]

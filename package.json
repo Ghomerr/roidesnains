@@ -1,0 +1,29 @@
+{
+    "name": "roidesnains",
+    "version": "1.2.0",
+    "description": "Roi des Nains version Web - par Ghomerr",
+    "main": "index.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "start": "node server.js",
+        "dev": "nodemon server.js"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+ssh://git@gitlab.com/roidesnains/roidesnains.git"
+    },
+    "author": "RoisDesNains",
+    "license": "ISC",
+    "dependencies": {
+        "@fortawesome/fontawesome-free": "^5.15.3",
+        "express": "^4.21.2",
+        "socket.io": "^4.8.1"
+    },
+    "devDependencies": {
+        "nodemon": "^3.1.9"
+    },
+    "bugs": {
+        "url": "https://gitlab.com/roidesnains/roidesnains/issues"
+    },
+    "homepage": "https://gitlab.com/roidesnains/roidesnains#readme"
+}

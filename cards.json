@@ -1,0 +1,316 @@
+[{
+    "id": 1,
+    "value": 2,
+    "name": "2",
+    "head": false,
+    "special": false,
+    "type": "dwarf",
+    "img": "carte_nain_2.png"
+}, {
+    "id": 2,
+    "value": 3,
+    "name": "3",
+    "head": false,
+    "special": false,
+    "type": "dwarf",
+    "img": "carte_nain_3.png"
+}, {
+    "id": 3,
+    "value": 4,
+    "name": "4",
+    "head": false,
+    "special": false,
+    "type": "dwarf",
+    "img": "carte_nain_4.png"
+}, {
+    "id": 4,
+    "value": 5,
+    "name": "5",
+    "head": false,
+    "special": false,
+    "type": "dwarf",
+    "img": "carte_nain_5.png",
+    "effect": "none"
+}, {
+    "id": 5,
+    "value": 6,
+    "name": "6",
+    "head": false,
+    "special": false,
+    "type": "dwarf",
+    "img": "carte_nain_6.png"
+}, {
+    "id": 6,
+    "value": 7,
+    "name": "7",
+    "head": false,
+    "special": false,
+    "type": "dwarf",
+    "img": "carte_nain_7.png"
+}, {
+    "id": 7,
+    "value": 8,
+    "name": "8",
+    "head": false,
+    "special": false,
+    "type": "dwarf",
+    "img": "carte_nain_8.png"
+}, {
+    "id": 8,
+    "value": 9,
+    "name": "9",
+    "head": false,
+    "special": false,
+    "type": "dwarf",
+    "img": "carte_nain_9.png"
+}, {
+    "id": 9,
+    "value": 10,
+    "name": "10",
+    "head": false,
+    "special": false,
+    "type": "dwarf",
+    "img": "carte_nain_10.png"
+}, {
+    "id": 10,
+    "value": 12,
+    "name": "jack",
+    "head": true,
+    "special": false,
+    "type": "dwarf",
+    "img": "carte_nain_cavalier.png"
+}, {
+    "id": 11,
+    "value": 13,
+    "name": "queen",
+    "head": true,
+    "special": false,
+    "type": "dwarf",
+    "img": "carte_nain_reine.png"
+}, {
+    "id": 12,
+    "value": 14,
+    "name": "king",
+    "head": true,
+    "special": false,
+    "type": "dwarf",
+    "img": "carte_nain_roi.png"
+}, {
+    "id": 13,
+    "value": 15,
+    "name": "ace",
+    "head": true,
+    "special": false,
+    "type": "dwarf",
+    "img": "carte_nain_as.png"
+}, {
+    "id": 14,
+    "value": 2,
+    "name": "2",
+    "head": false,
+    "special": false,
+    "type": "knight",
+    "img": "carte_chevalier_2.png"
+}, {
+    "id": 15,
+    "value": 3,
+    "name": "3",
+    "head": false,
+    "special": false,
+    "type": "knight",
+    "img": "carte_chevalier_3.png"
+}, {
+    "id": 16,
+    "value": 4,
+    "name": "4",
+    "head": false,
+    "special": false,
+    "type": "knight",
+    "img": "carte_chevalier_4.png"
+}, {
+    "id": 17,
+    "value": 5,
+    "name": "5",
+    "head": false,
+    "special": false,
+    "type": "knight",
+    "img": "carte_chevalier_5.png",
+    "effect": "choix_quete"
+}, {
+    "id": 18,
+    "value": 6,
+    "name": "6",
+    "head": false,
+    "special": false,
+    "type": "knight",
+    "img": "carte_chevalier_6.png"
+}, {
+    "id": 19,
+    "value": 7,
+    "name": "7",
+    "head": false,
+    "special": false,
+    "type": "knight",
+    "img": "carte_chevalier_7.png"
+}, {
+    "id": 20,
+    "value": 8,
+    "name": "8",
+    "head": false,
+    "special": false,
+    "type": "knight",
+    "img": "carte_chevalier_8.png"
+}, {
+    "id": 21,
+    "value": 9,
+    "name": "9",
+    "head": false,
+    "special": false,
+    "type": "knight",
+    "img": "carte_chevalier_9.png"
+}, {
+    "id": 22,
+    "value": 10,
+    "name": "10",
+    "head": false,
+    "special": false,
+    "type": "knight",
+    "img": "carte_chevalier_10.png"
+}, {
+    "id": 23,
+    "value": 12,
+    "name": "jack",
+    "head": true,
+    "special": false,
+    "type": "knight",
+    "img": "carte_chevalier_cavalier.png"
+}, {
+    "id": 24,
+    "value": 13,
+    "name": "queen",
+    "head": true,
+    "special": false,
+    "type": "knight",
+    "img": "carte_chevalier_reine.png"
+}, {
+    "id": 25,
+    "value": 14,
+    "name": "king",
+    "head": true,
+    "special": false,
+    "type": "knight",
+    "img": "carte_chevalier_roi.png"
+}, {
+    "id": 26,
+    "value": 15,
+    "name": "ace",
+    "head": true,
+    "special": false,
+    "type": "knight",
+    "img": "carte_chevalier_as.png"
+}, {
+    "id": 27,
+    "value": 2,
+    "name": "2",
+    "head": false,
+    "special": false,
+    "type": "goblin",
+    "img": "carte_gobelin_2.png"
+}, {
+    "id": 28,
+    "value": 3,
+    "name": "3",
+    "head": false,
+    "special": false,
+    "type": "goblin",
+    "img": "carte_gobelin_3.png"
+}, {
+    "id": 29,
+    "value": 4,
+    "name": "4",
+    "head": false,
+    "special": false,
+    "type": "goblin",
+    "img": "carte_gobelin_4.png"
+}, {
+    "id": 30,
+    "value": 5,
+    "name": "5",
+    "head": false,
+    "special": false,
+    "type": "goblin",
+    "img": "carte_gobelin_5.png",
+    "effect": "premier_joueur"
+}, {
+    "id": 31,
+    "value": 6,
+    "name": "6",
+    "head": false,
+    "special": false,
+    "type": "goblin",
+    "img": "carte_gobelin_6.png"
+}, {
+    "id": 32,
+    "value": 7,
+    "name": "7",
+    "head": false,
+    "special": false,
+    "type": "goblin",
+    "img": "carte_gobelin_7.png"
+}, {
+    "id": 33,
+    "value": 8,
+    "name": "8",
+    "head": false,
+    "special": false,
+    "type": "goblin",
+    "img": "carte_gobelin_8.png"
+}, {
+    "id": 34,
+    "value": 9,
+    "name": "9",
+    "head": false,
+    "special": false,
+    "type": "goblin",
+    "img": "carte_gobelin_9.png"
+}, {
+    "id": 35,
+    "value": 10,
+    "name": "10",
+    "head": false,
+    "special": false,
+    "type": "goblin",
+    "img": "carte_gobelin_10.png"
+}, {
+    "id": 36,
+    "value": 12,
+    "name": "jack",
+    "head": true,
+    "special": false,
+    "type": "goblin",
+    "img": "carte_gobelin_cavalier.png"
+}, {
+    "id": 37,
+    "value": 13,
+    "name": "queen",
+    "head": true,
+    "special": false,
+    "type": "goblin",
+    "img": "carte_gobelin_reine.png"
+}, {
+    "id": 38,
+    "value": 14,
+    "name": "king",
+    "head": true,
+    "special": false,
+    "type": "goblin",
+    "img": "carte_gobelin_roi.png"
+}, {
+    "id": 39,
+    "value": 15,
+    "name": "ace",
+    "head": true,
+    "special": false,
+    "type": "goblin",
+    "img": "carte_gobelin_as.png"
+}]

@@ -1,0 +1,221 @@
+[{
+    "img": "tuile1.png",
+    "quests": [{
+        "code": "1-1",
+        "name": "Sus aux chevaliers",
+        "score": "card.type==knight:+1"
+    }, {
+        "code": "1-2",
+        "name": "Sus aux gobelins",
+        "score": "card.type==goblin:+1"
+    }]
+}, {
+    "img": "tuile2.png",
+    "quests": [{
+        "code": "2-1",
+        "name": "Isolez les Rois",
+        "score": "card.name==king:+3,card.name==queen:-3"
+    }, {
+        "code": "2-2",
+        "name": "Isolez les Reines",
+        "score": "card.name==king:-3,card.name==queen:+3"
+    }]
+}, {
+    "img": "tuile3.png",
+    "quests": [{
+        "code": "3-1",
+        "name": "Dernier carré",
+        "score": "folds.length==4:+5"
+    }, {
+        "code": "3-2",
+        "name": "Demi carré",
+        "score": "folds.length==2:+5"
+    }]
+}, {
+    "img": "tuile4.png",
+    "quests": [{
+        "code": "4-1",
+        "name": "Victoire des Chevaliers sur les Nains",
+        "score": "card.type==knight:+1,card.type==dwarf:-1"
+    }, {
+        "code": "4-2",
+        "name": "Victoire des Nains sur les Chevaliers",
+        "score": "card.type==knight:-1,card.type==dwarf:+1"
+    }]
+}, {
+    "img": "tuile5.png",
+    "quests": [{
+        "code": "5-1",
+        "name": "Le plus de victoires",
+        "score": "folds.length"
+    }, {
+        "code": "5-2",
+        "name": "Le moins de victoires",
+        "score": "-folds.length"
+    }]
+}, {
+    "img": "tuile6.png",
+    "quests": [{
+        "code": "6-1",
+        "name": "Les triplés",
+        "score": "cards.triples.length,cards.head_triples.length*2"
+    }, {
+        "code": "6-2",
+        "name": "La Grande Armée",
+        "score": "cards.straight.length"
+    }]
+}, {
+    "img": "tuile7.png",
+    "quests": [{
+        "code": "7-1",
+        "name": "Armée d'élite",
+        "score": "cards.least_color.length"
+    }, {
+        "code": "7-2",
+        "name": "Armée de masse",
+        "score": "cards.most_color.length"
+    }]
+}, {
+    "img": "tuile8.png",
+    "quests": [{
+        "code": "8-1",
+        "name": "Charge des Paladins",
+        "score": "card.name==jack:+4"
+    }, {
+        "code": "8-2",
+        "name": "Déroute des Paladins",
+        "score": "card.name==jack:-4"
+    }]
+}, {
+    "img": "tuile9.png",
+    "quests": [{
+        "code": "9-1",
+        "name": "Sauvez l'arrière garde",
+        "score": "fold.order>=room.turn-4:+2"
+    }, {
+        "code": "9-2",
+        "name": "Sacrifiez l'arrière garde",
+        "score": "fold.order>=room.turn-4:-2"
+    }]
+}, {
+    "img": "tuile10.png",
+    "quests": [{
+        "code": "10-1",
+        "name": "Nobles et Chevaliers",
+        "score": "card.head:+1,card.type==knight:+1"
+    }, {
+        "code": "10-2",
+        "name": "Piétaille sans Chevalier",
+        "score": "card.head:-1,card.type==knight:-1"
+    }]
+}, {
+    "img": "tuile11.png",
+    "quests": [{
+        "code": "11-1",
+        "name": "Sauvez les Nobles",
+        "score": "cards.weakest.value&!card.head,cards.only_heads:+10"
+    }, {
+        "code": "11-2",
+        "name": "Sauvez les braves",
+        "score": "-cards.weakest.value&!card.head"
+    }]
+}, {
+    "img": "tuile12.png",
+    "quests": [{
+        "code": "12-1",
+        "name": "A droite",
+        "score": "folds.player.right.length"
+    }, {
+        "code": "12-2",
+        "name": "A gauche",
+        "score": "folds.player.left.length"
+    }]
+}, {
+    "img": "tuile13.png",
+    "quests": [{
+        "code": "13-1",
+        "name": "Nains de jardin",
+        "score": "card.type==dwarf&!card.head:cards.weakest.value"
+    }, {
+        "code": "13-2",
+        "name": "P'tits soldats",
+        "score": "card.type==knight&!card.head:cards.weakest.value"
+    }]
+}, {
+    "img": "tuile14.png",
+    "quests": [{
+        "code": "14-1",
+        "name": "8, 9, Nains...",
+        "score": "card.type==dwarf:+1,card.name==8:+1,card.name==9:+1"
+    }, {
+        "code": "14-2",
+        "name": "Ni 8, ni 9, ni Nain",
+        "score": "card.type==dwarf:-1,card.name==8:-1,card.name==9:-1"
+    }]
+}, {
+    "img": "tuile15.png",
+    "quests": [{
+        "code": "15-1",
+        "name": "Pair et gagne",
+        "score": "folds.length%2==0:+5"
+    }, {
+        "code": "15-2",
+        "name": "Impair et gagne",
+        "score": "folds.length%2==1:+5"
+    }]
+}, {
+    "img": "tuile16.png",
+    "quests": [{
+        "code": "16-1",
+        "name": "3 p'tits tours et puis s'en va",
+        "score": "folds.length==3:+5"
+    }, {
+        "code": "16-2",
+        "name": "Il ne peut en rester qu'un",
+        "score": "folds.length==1:+5"
+    }]
+}, {
+    "img": "tuile17.png",
+    "quests": [{
+        "code": "17-1",
+        "name": "Déroute des Chevaliers",
+        "score": "card.type==knight:-1"
+    }, {
+        "code": "17-2",
+        "name": "Déroute des Gobelins",
+        "score": "card.type==goblin:-1"
+    }]
+}, {
+    "img": "tuile18.png",
+    "quests": [{
+        "code": "18-1",
+        "name": "De trois quart",
+        "score": "card.name==3:+4,card.name==4:+4"
+    }, {
+        "code": "18-2",
+        "name": "De six à sept",
+        "score": "card.name==6:+4,card.name==7:+4"
+    }]
+}, {
+    "img": "tuile19.png",
+    "quests": [{
+        "code": "19-1",
+        "name": "Seul contre tous",
+        "score": "folds.length!=folds.others.length:+5"
+    }, {
+        "code": "19-2",
+        "name": "Regroupez-vous",
+        "score": "folds.length==folds.others.length:+5"
+    }]
+}, {
+    "img": "tuile20.png",
+    "quests": [{
+        "code": "20-1",
+        "name": "Capturez la Reine des Nains",
+        "score": "card.type==dwarf&card.name==queen:+8"
+    }, {
+        "code": "20-2",
+        "name": "Fuyez la Reine des Nains",
+        "score": "card.type==dwarf&card.name==queen:-8"
+    }]
+}]

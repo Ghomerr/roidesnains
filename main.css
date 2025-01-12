@@ -1,0 +1,419 @@
+/**
+ * Colors palette : https://flatuicolors.com/palette/defo
+ */
+
+html,
+body {
+    background: #7d5308;
+    height: 100%;
+}
+
+body {
+    position: relative;
+    min-height: 100vh;
+}
+
+main {
+    padding-bottom: 2.5rem;
+    overflow-y: auto;
+    height: calc(100% - 140px);
+}
+
+footer {
+    background: #e4d170;
+    color: #7d5308;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    height: 2.5rem;
+    text-align: center;
+}
+
+#player-folds .fold-card-container img,
+#special-card img,
+#players-cards-in-current-turn img,
+#player-cards img {
+    height: 250px;
+    border-radius: 10px;
+    margin: 5px;
+}
+
+.player-folds-container,
+.player-cards-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+#players-cards-in-current-turn .played-card-container,
+#player-cards .player-cards-container>div,
+.special-card-container {
+    position: relative;
+    height: 260px;
+}
+
+.special-card-details {
+    display: inline-block;
+    text-align: left;
+}
+
+#player-folds .fold-card-container {
+    border-radius: 10px;
+    position: relative;
+    height: 280px;
+}
+
+#player-folds .fold-card-container,
+#players-cards-in-current-turn .played-card-container,
+#player-cards .player-cards-container>div {
+    width: 146.35px;
+}
+
+#player-folds .fold-card-container:hover img,
+#players-cards-in-current-turn .played-card-container:hover img,
+#player-cards .player-cards-container>div:hover img,
+#special-card:hover img {
+    height: 440px;
+    position: absolute;
+    top: -50%;
+    left: calc(50% - 120px);
+    z-index: 2;
+}
+
+#player-folds .fold-container {
+    margin: 10px;
+    border-radius: 10px;
+}
+
+.positive,
+.negative {
+    font-weight: bold;
+}
+
+.positive {
+    background: #bfdc49;
+    color: #27ae60;
+}
+
+.negative {
+    background: #dca849;
+    color: #e74c3c;
+}
+
+.head-container {
+    background: #e4d170;
+    min-height: 70px;
+}
+
+.head-container.in-game .game-title,
+.head-container.in-game .selected-quest,
+.lobby-container {
+    flex: 3;
+}
+
+.head-container .selected-quest {
+    text-align: right;
+    margin: 0 10px;
+}
+
+.head-container .selected-quest #quest-card-container {
+    height: 100px;
+    overflow: hidden;
+}
+
+.head-container .selected-quest #quest-card-container img {
+    height: 200px;
+}
+
+.head-container .selected-quest #quest-card-container.quest-id-1 img {
+    position: relative;
+    top: -100px;
+}
+
+.head-container.in-game {
+    display: flex;
+}
+
+.game-title {
+    font-weight: bold;
+    font-size: 200%;
+    margin: 0 10px;
+}
+
+.lobby-container {
+    margin: 10px;
+    text-align: center;
+}
+
+.lobby-inputs,
+.players-list {
+    background: #e4d170;
+    border-radius: 5px;
+    padding: 5px;
+    width: 400px;
+    margin: auto;
+}
+
+#room-password-link {
+    cursor: pointer;
+}
+
+#room-password-link:hover {
+    text-decoration: underline;
+}
+
+#rooms-list {
+    margin-top: 10px;
+}
+
+.lobby-inputs-title,
+.rooms-list-title {
+    margin-bottom: 5px;
+}
+
+.room-line {
+    display: flex;
+}
+
+.room-line>div {
+    flex: 1;
+}
+
+.room-line>.room-name {
+    flex: 2;
+    font-weight: bold;
+}
+
+.room-status {
+    font-weight: bold;
+}
+
+.room-line.in-game>.room-name,
+.room-line.in-game>.room-status {
+    color: #e74c3c;
+}
+
+.room-line.full-lobby>.room-name,
+.room-line.full-lobby>.room-status {
+    color: #e67e22;
+}
+
+.room-line.lobby>.room-name,
+.room-line.lobby>.room-status {
+    color: #27ae60;
+}
+
+.room-line.lobby>.room-name {
+    cursor: pointer;
+}
+
+.room-line.lobby>.room-name:hover {
+    text-decoration: underline;
+    color: #219250;
+}
+
+.room-line.full-lobby>.room-name,
+.room-line.in-game>.room-name {
+    cursor: not-allowed;
+}
+
+.button-container {
+    margin-top: 5px;
+}
+
+.room-id-title {
+    font-weight: bold;
+    font-size: 150%;
+}
+
+#random-room-id-btn {
+    position: absolute;
+    margin-left: 5px;
+}
+
+.info-players {
+    font-size: 75%;
+}
+
+.players-scores {
+    display: flex;
+    flex: 2;
+}
+
+.players-scores .player-box {
+    flex-grow: 1;
+    text-align: center;
+    margin: 10px;
+    padding: 10px;
+    border-radius: 5px;
+    background: #c6b662;
+}
+
+.players-scores .player-box.current-player {
+    background: #978a49;
+    color: white;
+}
+
+.players-scores .player-box .player-label {
+    font-weight: bold;
+}
+
+.players-scores .player-box .player-score {
+    white-space: nowrap;
+}
+
+.room-banner {
+    width: 100%;
+    display: flex;
+    background: #7d5308;
+    color: white;
+    height: 40px;
+    align-items: center;
+}
+
+.room-banner>div {
+    margin: 0 10px;
+}
+
+.player-turn,
+.room-id-title {
+    flex: 2;
+}
+
+.actions-btn {
+    flex: 1;
+}
+
+.folds-cards-container .fold-cards {
+    display: inline-block;
+    margin: 10px 20px;
+}
+
+.room-banner .player-turn {
+    text-align: left;
+}
+
+.room-banner .room-id-title {
+    text-align: right;
+}
+
+.room-banner .actions-btn {
+    color: #7d5308;
+    text-align: center;
+}
+
+.player-turn {
+    font-weight: bold;
+    font-size: 125%;
+}
+
+.quest-choice-special-card-container {
+    display: flex;
+    align-items: center;
+    background: #3c2208;
+}
+
+.quest-choice-special-card-container>div {
+    flex: 1;
+}
+
+.quest-choice {
+    color: white;
+    text-align: center;
+    padding: 10px;
+}
+
+#quest-select-btn {
+    color: #3c2208;
+}
+
+#players-scores-summary,
+#special-card {
+    text-align: center;
+    color: white;
+}
+
+.lobby-inputs-title,
+.rooms-list-title,
+.player-summary-title,
+#player-cards .player-cards-title,
+#player-folds .player-folds-title,
+#players-cards-in-current-turn .turn-cards-title,
+#special-card .special-card-title {
+    font-weight: bold;
+    font-size: 150%;
+}
+
+#player-folds,
+#players-cards-in-current-turn {
+    background: #e4d170;
+    min-height: 310px;
+    text-align: center;
+}
+
+#players-cards-in-current-turn #turn-cards {
+    display: flex;
+    justify-content: center;
+}
+
+.text-center,
+#players-cards-in-current-turn .played-card-container .player-name {
+    text-align: center;
+}
+
+#player-cards {
+    background: #dca849;
+    min-height: 310px;
+    text-align: center;
+}
+
+#player-cards.current-player {
+    background: #bfdc49;
+}
+
+#player-cards .cannot-be-played,
+#player-cards:not(.current-player) div:not(.can-be-played)>img {
+    cursor: not-allowed;
+    opacity: 0.5;
+}
+
+#player-cards.current-player img:not(.cannot-be-played),
+#player-cards .can-be-played {
+    cursor: pointer;
+    opacity: 1;
+}
+
+#player-cards .can-be-played {
+    background: #bfdc49;
+}
+
+#player-cards .cannot-be-played {
+    background: #dca849;
+}
+
+#player-folds .player-folds-container .fold-container {
+    display: flex;
+    flex: 1;
+    justify-content: center;
+    align-items: center;
+}
+
+.player-summary.current-player {
+    font-weight: bold;
+}
+
+#select-cards,
+#select-other-cards,
+#select-cards-btn-container {
+    text-align: center;
+    margin-top: 10px;
+}
+
+#select-cards img.selected,
+#select-other-cards img.selected {
+    border: 5px solid #bfdc49;
+}
+
+i.fixed-size {
+    width: 15px;
+}

@@ -1,0 +1,33 @@
+# This file is a template, and might need editing before it works on your project.
+# Official framework image. Look for the different tagged releases at:
+# https://hub.docker.com/r/library/node/tags/
+#image: node
+
+
+# This folder is cached between builds
+# http://docs.gitlab.com/ee/ci/yaml/README.html#cache
+#cache:
+#  paths:
+#    - node_modules/
+
+#stages:
+#  - deploy
+
+#deploy:
+#  stage: deploy
+#  script:
+#    - npm version
+#    - npm uninstall -g heroku-cli
+#    - npm install -g heroku
+#    - npm install
+#    - heroku login -i
+#    - echo "$HEROKU_EMAIL"
+#    - echo "$HEROKU_PASSWORD"
+#    - git remote add heroku https://heroku@git.heroku.com/redditchatbot.git 
+#    - git push heroku HEAD:master
+
+#    - heroku login echo "$HEROKU_CREDENTIALS_EMAIL $HEROKU_CREDENTIALS_PASSWORD"
+#    - heroku git:remote -a roidesnains
+#    - git push heroku master
+
+

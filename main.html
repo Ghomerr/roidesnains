@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+
+<head>
+    <title>Roi des Nains</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="main.css">
+    <link rel="stylesheet" type="text/css" href="node_modules/@fortawesome/fontawesome-free/css/all.css">
+</head>
+
+<body>
+    <header>
+        <div id="head-container" class="head-container">
+            <div class="game-title"><img src="assets/banniere.png" alt="Roi des nains" /></div>
+
+            <div id="players-scores" class="players-scores" style="display: none;">
+                <div class="player-box" data-player-id="" style="display: none;">
+                    <div class="player-label"></div>
+                    <div class="player-folds">Plis <span>0</span></div>
+                    <div class="player-score">Score <span>0</span></div>
+                </div>
+                <div class="player-box" data-player-id="" style="display: none;">
+                    <div class="player-label"></div>
+                    <div class="player-folds">Plis <span>0</span></div>
+                    <div class="player-score">Score <span>0</span></div>
+                </div>
+                <div class="player-box" data-player-id="" style="display: none;">
+                    <div class="player-label"></div>
+                    <div class="player-folds">Plis <span>0</span></div>
+                    <div class="player-score">Score <span>0</span></div>
+                </div>
+                <div class="player-box" data-player-id="" style="display: none;">
+                    <div class="player-label"></div>
+                    <div class="player-folds">Plis <span>0</span></div>
+                    <div class="player-score">Score <span>0</span></div>
+                </div>
+                <div class="player-box" data-player-id="" style="display: none;">
+                    <div class="player-label"></div>
+                    <div class="player-folds">Plis <span>0</span></div>
+                    <div class="player-score">Score <span>0</span></div>
+                </div>
+            </div>
+
+            <div class="selected-quest" style="visibility :hidden;">
+                <div id="quest-card-container" style="display: none;">
+
+                </div>
+            </div>
+        </div>
+
+        <div id="room-banner" class="room-banner" style="display: none;">
+            <div class="player-turn"></div>
+            <div class="actions-btn">
+                <button id="auto-play-btn" style="display: none;">Auto play</button>
+                <button id="next-game-btn" style="display: none;">Donne suivante</button>
+                <button id="previous-fold-btn" style="display: none;">Dernier pli</button>
+                <button id="my-folds-btn" style="display: none;">Mes plis</button>
+            </div>
+            <div class="room-id-title"></div>
+        </div>
+    </header>
+
+    <main>
+        <div class="lobby-container">
+            <div id="lobby-inputs" class="lobby-inputs">
+                <div class="lobby-inputs-title">Rejoindre une salle de jeu</div>
+                <div class="user-id-container">
+                    <i class="fas fa-user fixed-size"></i>
+                    <input id="user-id" type="text" value="" placeholder="Utilisateur" title="Utilisateur" />
+                </div>
+                <div class="room-id-container">
+                    <i class="fas fa-key fixed-size"></i>
+                    <input id="room-id" type="text" value="" placeholder="ID Salle de jeu" title="ID Salle de jeu" size="20" maxlength="20" />
+                    <button id="random-room-id-btn" title="Générer un ID de Salle de jeu">
+                        <i class="fas fa-redo-alt"></i>
+                    </button>
+                </div>
+                <div class="private-room-container">
+                    <span id="room-password-link"><i class="fas fa-lock"></i> Partie privée ?</span>
+                    <div id="room-password-container" style="display: none;">
+                        <i class="fas fa-lock fixed-size"></i>
+                        <input id="room-password" type="text" value="" placeholder="Mot de passe" title="Mot de passe" size="20" maxlength="20" />
+                    </div>
+                </div>
+                <div class="button-container">
+                    <button id="lobby-btn" value="Entrer" disabled>
+                        <i class="fas fa-sign-in-alt"></i> Entrer
+                    </button>
+                </div>
+            </div>
+
+            <div id="players-list" class="players-list" style="display: none;">
+                <div class="room-id-title"></div>
+                <div class="lobby-players-list"></div>
+                <div id="start-content">
+                    <button id="start-btn" disabled style="display: none;">
+                        <i class="fas fa-play"></i> Démarrer
+                    </button>
+                    <div class="info-players"><span> Joueur(s) </span><span id="players-counter"></span> (min 3, max 5)</div>
+                    <div class="info-players" id="info-password" style="display: none;"></div>
+                </div>
+            </div>
+
+            <div id="rooms-list" class="players-list" style="display: none;">
+                <div class="rooms-list-title">Liste des salles de jeu</div>
+                <div id="rooms-list-content">
+                </div>
+            </div>
+        </div>
+
+        <div class="quest-choice-special-card-container">
+            <div id="quest-choice" class="quest-choice" style="display: none;">
+                <h4 id="current-quest" style="display: none;"></h4>
+                <div id="quest-tile"></div>
+                <div id="quest-select-btn" style="display: none;">
+                    <input type="button" value="" id="quest-1" />
+                    <input type="button" value="" id="quest-2" />
+                </div>
+            </div>
+
+            <div id="players-scores-summary" style="display: none;">
+                <div class="player-summary-title">Résultats de la donne</div>
+                <div class="players-scores-summary">
+                    <div class="player-summary" style="display: none;">
+                        <span class="player-label">Player1</span> : <span class="player-prev-score">0</span> <span class="player-delta-score">+1</span> = <span class="player-score">+1</span>
+                    </div>
+                    <div class="player-summary" style="display: none;">
+                        <span class="player-label">Player2</span> : <span class="player-prev-score">0</span> <span class="player-delta-score">+1</span> = <span class="player-score">+1</span>
+                    </div>
+                    <div class="player-summary" style="display: none;">
+                        <span class="player-label">Player3</span> : <span class="player-prev-score">0</span> <span class="player-delta-score">+1</span> = <span class="player-score">+1</span>
+                    </div>
+                    <div class="player-summary" style="display: none;">
+                        <span class="player-label">Player4</span> : <span class="player-prev-score">0</span> <span class="player-delta-score">+1</span> = <span class="player-score">+1</span>
+                    </div>
+                    <div class="player-summary" style="display: none;">
+                        <span class="player-label">Player5</span> : <span class="player-prev-score">0</span> <span class="player-delta-score">+1</span> = <span class="player-score">+1</span>
+                    </div>
+                </div>
+            </div>
+
+            <div id="special-card" style="display: none;">
+                <div class="special-card-title">Carte spéciale de la donne</div>
+                <div class="special-card-container"></div>
+            </div>
+        </div>
+
+        <div id="players-cards-in-current-turn" style="display: none;">
+            <div class="turn-cards-title">Cartes du tour</div>
+            <div id="turn-cards" style="display: none;">
+
+            </div>
+        </div>
+
+        <div id="player-cards" style="display: none">
+            <div class="player-cards-title">Mes cartes</div>
+            <div class="player-cards-container"></div>
+        </div>
+
+        <div id="player-folds" style="display: none">
+            <div class="player-folds-title">Mes plis</div>
+            <div class="player-folds-container"></div>
+        </div>
+
+        <div id="simple-dialog" title="Test dialog">
+            <div id="dialog-text">
+                Ceci est un message.
+            </div>
+        </div>
+        <div id="swap-hand-dialog" title="">
+            <div id="swap-hand-dialog-text">
+
+            </div>
+            <div class="swap-hand-buttons" style="display: none;">
+                <button id="swap-hand-player-1" data-player-id="" style="display: none;">Echanger avec <span id="player-label"></span></button>
+                <button id="swap-hand-player-2" data-player-id="" style="display: none;">Echanger avec <span id="player-label"></span></button>
+                <button id="swap-hand-player-3" data-player-id="" style="display: none;">Echanger avec <span id="player-label"></span></button>
+                <button id="swap-hand-player-4" data-player-id="" style="display: none;">Echanger avec <span id="player-label"></span></button>
+                <button id="swap-hand-player-5" data-player-id="" style="display: none;">Echanger avec <span id="player-label"></span></button>
+            </div>
+        </div>
+        <div id="swap-players-dialog" title="">
+            <div id="swap-players-dialog-text">
+
+            </div>
+            <div class="swap-players-buttons" style="display: none;">
+                <button id="swap-players-left" data-swap-dir="left">Gauche</button>
+                <button id="swap-players-right" data-swap-dir="right">Droite</button>
+            </div>
+        </div>
+        <div id="select-cards-dialog" title="">
+            <div id="select-card-dialog-text">
+
+            </div>
+            <div id="select-cards" style="display: none">
+
+            </div>
+            <div id="select-other-cards" style="display: none">
+
+            </div>
+            <div id="select-cards-btn-container">
+                <button id="select-cards-btn" style="display: none" disabled>Valider</button>
+                <button id="select-prev-fold-card-btn" style="display: none" disabled>Valider</button>
+            </div>
+        </div>
+    </main>
+
+    <footer id="footer">
+        <span><i class="fas fa-crown"></i></span>
+        <span class="version">roidesnains v0.0.0.0</span>
+        <span> - </span>
+        <span class="rules">
+            <a href="https://www.jeuxavolonte.asso.fr/regles/le_roi_des_nains.pdf"><i class="fas fa-book"></i> Règles du jeu</a>
+        </span>
+        <span> - </span>
+        <span class="the-game">
+            <a href="https://www.iello.fr/fr/fiche/le-roi-des-nains"><i class="fas fa-puzzle-piece"></i> Un jeu</a>
+            <span> de </span>
+        <a href="https://twitter.com/Bruno_Faidutti"><i class="fab fa-twitter"></i> Bruno Faidutti</a>
+        </span>
+        <span> - </span>
+        <span class="twitter">
+            Développé par <a href="https://twitter.com/Ghomerr"><i class="fab fa-twitter"></i> Ghomerr</a>
+        </span>
+        <span> - </span>
+        <span>
+            <a href="https://gitlab.com/roidesnains/roidesnains"><i class="fab fa-gitlab"></i> Sources</a>
+        </span>
+    </footer>
+
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="./client.js"></script>
+</body>
+
+</html>
