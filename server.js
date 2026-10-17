@@ -6,6 +6,7 @@ const path = require('path');
 
 // Load scripts
 const utils = require('./utils.js');
+const stats = require('./stats.js');
 
 // Load data
 const cards = require('./cards.json');
@@ -20,6 +21,13 @@ const MAX_PLAYERS = 5;
 
 app.get('/', (req, res) => {
     res.sendFile(path.resolve(__dirname, '.') + '/main.html');
+});
+
+// Browser-side analytics (cookieless). Empty outside of Render, unless POSTHOG_KEY is set.
+app.get('/analytics.js', (req, res) => {
+    res.type('application/javascript');
+    res.set('Cache-Control', 'no-cache');
+    res.send(stats.clientScript());
 });
 
 app.use(express.static(path.resolve(__dirname, '.')));
@@ -158,6 +166,7 @@ io.on('connection', (socket) => {
         const room = rooms[data.roomId];
         if (room && room.users.length >= MIN_PLAYERS && room.users.length <= MAX_PLAYERS) {
             room.status = 'in-game';
+            if (!data.nextGame) stats.gameStarted(room);
 
             // Handle game reset for a next game
             if (data.nextGame) {
@@ -178,45 +187,18 @@ io.on('connection', (socket) => {
                 }
             } else {
                 // Suffle special cards
-                room.specials = utils.shuffle([...specialCards]);
+                // (copies: the game writes on the cards, e.g. the winner of the special card)
+                room.specials = utils.shuffle(specialCards.map(c => ({ ...c })));
                 // Shuffle quest tiles
                 room.tiles = utils.shuffle([...tiles]);
             }
 
-            // Take one quest tile
+            // Take one quest tile and one special card for this "donne"
             room.questTile = room.tiles.pop();
-            /*
-            room.questTile = {
-                "img": "tuile16.png",
-                "quests": [{
-                    "code": "16-1",
-                    "name": "3 p'tits tours et puis s'en va",
-                    "score": "folds.length==3:+5"
-                }, {
-                    "code": "16-2",
-                    "name": "Il ne peut en rester qu'un",
-                    "score": "folds.length==1:+5"
-                }]
-            };
-            //*/
-
-            // Take one special card
-            //room.specialCard = room.specials.pop();
-            //*
-            room.specialCard = {
-                "id": 53,
-                "value": 0,
-                "name": "wizard",
-                "head": false,
-                "special": true,
-                "type": "special",
-                "img": "carte_speciale_sorcier.png",
-                "effect": "get-previous-fold-card"
-            };
-            //*/
+            room.specialCard = room.specials.pop();
 
             // PREPARE GAME CARDS
-            let gameCards = [...cards];
+            let gameCards = cards.map(c => ({ ...c }));
             // remove 2 of dwarf (first card) for 3 players
             if (room.users.length === MIN_PLAYERS) {
                 gameCards.splice(0, 1);
@@ -496,6 +478,7 @@ io.on('connection', (socket) => {
                             room.playerTurn = '';
                             // COMPUTE SCORE
                             utils.computeScore(room);
+                            stats.donneEnded(room);
                         } else {
                             // Otherwise, next first player is the fold winner
                             room.playerTurn = winnerPlayer.id;
@@ -654,6 +637,7 @@ io.on('connection', (socket) => {
                 let index = utils.findIndexById(room.users, data.userId);
                 if (index >= 0) {
                     console.log('[player-quit]', data.userId, 'left the room', data.roomId);
+                    if (room.status === 'in-game') stats.gameAborted(room, 'joueur_parti');
                     // Remove player from room
                     room.users.splice(index, 1);
                     if (room.users.length === 0) {
